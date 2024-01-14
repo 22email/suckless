@@ -1,0 +1,30 @@
+diff --git a/config.def.h b/config.def.h
+index a2ac963..05c3d35 100644
+--- a/config.def.h
++++ b/config.def.h
+@@ -63,6 +63,12 @@ static const char *termcmd[]  = { "st", NULL };
+ static Key keys[] = {
+ 	/* modifier                     key        function        argument */
+ 	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
++	//directional focus
++	{ MODKEY,                     XK_Right,  focusright,     {0} },					// focus right
++	{ MODKEY,                     XK_Left,   focusleft,      {0} },					// focus left
++	{ MODKEY,                     XK_Down,   focusdown,      {0} },					// focus down
++	{ MODKEY,                     XK_Up,     focusup,        {0} },					// focus up
++
+ 	{ MODKEY|ShiftMask,             XK_Return, spawn,          {.v = termcmd } },
+ 	{ MODKEY,                       XK_b,      togglebar,      {0} },
+ 	{ MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
+diff --git a/dwm.c b/dwm.c
+index 5e4d494..92da56f 100644
+--- a/dwm.c
++++ b/dwm.c
+@@ -269,6 +269,8 @@ static Drw *drw;
+ static Monitor *mons, *selmon;
+ static Window root, wmcheckwin;
+ 
++#include "directionalfocus.h"
++
+ /* configuration, allows nested code to access above variables */
+ #include "config.h"
+ 
