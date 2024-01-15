@@ -96,6 +96,9 @@ static const char *bright_down[] = {"/home/kevin/.config/suckless/dwm/scripts/br
 
 static const char *lock[] = {"slock", NULL};
 
+static const char *screenshot_select[] = {"flameshot", "gui", NULL};
+static const char *screenshot_full[] = {"flameshot", "full", NULL};
+
 static const Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
@@ -113,6 +116,8 @@ static const Key keys[] = {
 	{ MODKEY|ControlMask,           XK_equal, cyclelayout,    {.i = +1 } },
   { MODKEY|ControlMask,           XK_l,      spawn,          {.v = lock}},
 	{ MODKEY,                       XK_h,      focusleft,      {0} },					// focus left
+  { MODKEY|ShiftMask, XK_s, spawn, {.v = screenshot_select }},
+  { MODKEY|Mod1Mask, XK_s, spawn, {.v = screenshot_full}},
 	{ MODKEY,                       XK_j,      focusdown,      {0} },					// focus down
 	{ MODKEY,                       XK_k,      focusup,        {0} },					// focus up
   { MODKEY,                       XK_w,      killclient,     {0} },
