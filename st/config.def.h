@@ -98,7 +98,7 @@ char *termname = "st-256color";
  *	it#$tabspaces,
  *
  * Secondly make sure your kernel is not expanding tabs. When running `stty
- * -a` »tab0« should appear. You can tell the terminal to not expand tabs by
+* -a` »tab0« should appear. You can tell the terminal to not expand tabs by
  *  running following command:
  *
  *	stty tabs
