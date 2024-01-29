@@ -491,7 +491,7 @@ buttonpress(XEvent *e)
 				}
 			}
 		} else
-			click = 0;
+			click = ClkLast;
 	} else if ((c = wintoclient(ev->window))) {
 		focus(c);
 		restack(selmon);
