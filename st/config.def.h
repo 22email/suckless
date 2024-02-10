@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "JetBrainsMono NF:pixelsize=14:antialias=true:autohint=true";
+static char *font = "JetBrainsMono NFM:pixelsize=14:antialias=true:autohint=true";
 static int borderpx = 8;
 
 /*
@@ -107,7 +107,7 @@ unsigned int tabspaces = 8;
 
 static const char *colorname[] = {
     /* 8 normal colors */
-    "#090618",
+    "#16161d",
     "#c34043",
     "#76946A",
     "#c0a36e",

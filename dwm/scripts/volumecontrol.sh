@@ -1,16 +1,21 @@
-#!/usr/bin/env sh
+#!/bin/sh
+
+
+ex() {
+  kill -42 $(pidof dwmblocks)
+  exit
+}
 
 mute() {
   pamixer --toggle-mute
-  
+
   if [ "$(pamixer --get-mute)" = true ]; then 
-    notify-send -h string:x-canonical-private-synchronous:sys-notify "Muted"
+    notify-send -i " " -h string:x-canonical-private-synchronous:volume "Volume:" "Muted" -t 4000
   else 
-    notify-send -h string:x-canonical-private-synchronous:sys-notify "Unmuted"
+    notify-send -i " " -h string:x-canonical-private-synchronous:volume "Volume:" "Unmuted" -t 4000
   fi
 
-  kill -42 $(pidof dwmblocks)
-  exit
+  ex
 }
 
 case $1 in 
@@ -20,5 +25,5 @@ case $1 in
   *) echo "Invalid Option" ;;
 esac
 
-notify-send -h string:x-canonical-private-synchronous:sys-notify "Volume:" "$(pamixer --get-volume)"
-kill -42 $(pidof dwmblocks)
+notify-send -i " " -h string:x-canonical-private-synchronous:volume "Volume:" "$(pamixer --get-volume)" -t 4000
+ex

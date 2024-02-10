@@ -12,13 +12,13 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 0;        /* 0 means bottom bar */
 static const int vertpad            = 10;       /* vertical padding of bar */
 static const int sidepad            = 80;       /* horizontal padding of bar */
-static const char *fonts[]          = { "JetBrainsMono NF:size=10" };
+static const char *fonts[]          = { "JetBrainsMono NF:size=9" };
 static const char dmenufont[]       = "JetBrainsMono NF:size=10";
 static const char col_gray1[]       = "#1f1f28";
-static const char col_gray2[]       = "#1f1f28";
+static const char col_gray2[]       = "#16161d";
 static const char col_gray3[]       = "#dcd7ba";
 static const char col_gray4[]       = "#1f1f28";
-static const char col_main[]        = "#6a9589";
+static const char col_main[]        = "#7aa89f";
 static const char *colors[][3]      = {
 	/*               fg         bg         border   */
 	[SchemeNorm] = { col_gray3, col_gray1, col_gray2 },
@@ -83,7 +83,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", col_gray1, "-nf", col_gray3, "-sb", col_main, "-sf", col_gray4, NULL };
+static const char *dmenucmd[] = {"dmenu_run", "-x", "80", "-y", "10", "-z", "1206"};
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[] = {"firefox", NULL};
 

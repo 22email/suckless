@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/bin/sh
 
 case $1 in 
   i) brillo -q -A 10 ;; # Increase brightness
@@ -6,5 +6,4 @@ case $1 in
   *) echo "Invalid Option" ;;
 esac
 
-notify-send -h string:x-canonical-private-synchronous:sys-notify "Brightness:" "$(brillo)"
-
+notify-send -i " " -h string:x-canonical-private-synchronous:brightness "Brightness:" "$(brillo)" -t 4000
