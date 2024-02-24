@@ -20,8 +20,7 @@
 #define BLOCKS(X)         \
     X("sb-volume", 0, 8)  \
     X("sb-battery", 5, 9) \
-    X("sb-internet", 1, 11)  \
-    X("sb-date", 1, 10) \
-    X("sb-power", 0, 12)
+    X("sb-date", 1, 10) 
+    // X("sb-power", 0, 12)
 
 #endif  // CONFIG_H
